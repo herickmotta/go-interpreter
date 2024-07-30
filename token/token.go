@@ -14,6 +14,13 @@ func New(t TokenType, ch byte) Token {
 	}
 }
 
+func NewLiteral(t TokenType, literal string) Token {
+	return Token{
+		Type:    t,
+		Literal: literal,
+	}
+}
+
 const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
@@ -29,6 +36,9 @@ const (
 	BANG     = "!"
 	ASTERISK = "*"
 	SLASH    = "/"
+
+	EQ     = "=="
+	NOT_EQ = "!="
 
 	LT = "<"
 	GT = ">"
